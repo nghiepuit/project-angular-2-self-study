@@ -1,0 +1,14 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Project 1</h3>
+    </div>
+    <div class="panel-body">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-success" role="button" routerLink="" routerLinkActive="active homeClassActive" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a class="btn btn-success" role="button" routerLink="/about" routerLinkActive="active test" [routerLinkActiveOptions]="{ exact: true }">About</a>
+        <a class="btn btn-success" role="button" routerLink="/about/detail" routerLinkActive="active test">About Detail</a>
+        <a class="btn btn-success" role="button" [routerLink]="['/contact']" routerLinkActive="active test">Contact</a>
+    </div>
+</div>
