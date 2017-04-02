@@ -8,7 +8,6 @@ import { MainComponent } from './project-one/main/main.component';
 import { NotFoundComponent } from './project-one/not-found/not-found.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'about/detail', component: AboutComponent },
   { path: 'contact', component: ContactComponent },

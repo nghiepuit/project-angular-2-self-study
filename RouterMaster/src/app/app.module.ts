@@ -1,8 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule,Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -12,6 +9,8 @@ import { ContactComponent } from './project-one/contact/contact.component';
 import { HomeComponent } from './project-one/home/home.component';
 import { MainComponent } from './project-one/main/main.component';
 import { NotFoundComponent } from './project-one/not-found/not-found.component';
+// Project two
+import { CourseModule } from './project-two/course.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +20,12 @@ import { NotFoundComponent } from './project-one/not-found/not-found.component';
     ContactComponent,
     HomeComponent,
     MainComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
+    // Chú ý thứ tự
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    CourseModule,
     AppRoutingModule
   ],
   providers: [],

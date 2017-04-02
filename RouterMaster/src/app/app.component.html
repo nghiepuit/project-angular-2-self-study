@@ -1,3 +1,25 @@
-<h1>Project 1 : Routing</h1>
-
-<app-main></app-main>
+<h1>Project 2</h1>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project Two</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a [routerLink]="['/courses']" href="#">Course List</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/course','C01']" href="#">Course C01</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/course','C02']" href="#">Course C02</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/course','C03']" href="#">Course C03</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+<router-outlet></router-outlet>
