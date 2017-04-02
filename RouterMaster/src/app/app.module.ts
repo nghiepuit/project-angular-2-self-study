@@ -10,7 +10,9 @@ import { HomeComponent } from './project-one/home/home.component';
 import { MainComponent } from './project-one/main/main.component';
 import { NotFoundComponent } from './project-one/not-found/not-found.component';
 // Project two
-import { CourseModule } from './project-two/course.module';
+// import { CourseModule } from './project-two/course.module';
+// Project three
+import { CourseModule } from './project-three/course.module';
 
 @NgModule({
   declarations: [

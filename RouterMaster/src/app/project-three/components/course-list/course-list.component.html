@@ -1,0 +1,24 @@
+<div class="panel panel-info">
+    <!-- Default panel contents -->
+    <div class="panel-heading">List Course</div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of courses;let i = index" [HightLightRow]="'#F7F9D2'">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ course.name | capitalize }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="viewDetail(course.id)">Detail</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
