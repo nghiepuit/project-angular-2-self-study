@@ -13,10 +13,10 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a [routerLink]="['/courses']" href="#">Course List</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/course',1]" href="#">Course C01</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/course',2]" href="#">Course C02</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/course',3]" href="#">Course C03</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/courses']" >Course List</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/course',1]" [queryParams]="{ page : 1 }">Course C01</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/course',2]" >Course C02</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/course',3]" >Course C03</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

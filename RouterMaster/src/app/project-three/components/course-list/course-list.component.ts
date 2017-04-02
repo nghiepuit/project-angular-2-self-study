@@ -23,8 +23,12 @@ export class CourseListComponent implements OnInit {
 	}
 
 	viewDetail(courseID : number){
-		// this._routerService.navigate(['course',courseID]);
-		this._routerService.navigateByUrl('course/' + courseID);
+		this._routerService.navigate(['course',courseID],{
+			queryParams: {
+				page : courseID
+			}
+		});
+		// this._routerService.navigateByUrl('course/' + courseID);
 	}
 
 }

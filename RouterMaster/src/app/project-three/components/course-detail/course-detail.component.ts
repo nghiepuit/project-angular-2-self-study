@@ -13,7 +13,9 @@ import { CourseService } from './../../services/course.service';
 export class CourseDetailComponent implements OnInit, OnDestroy {
 
 	course : ICourse;
-	subscription : Subscription;
+	subscriptionParams : Subscription;
+	subscriptionQueryParams : Subscription;
+	page : number = -1;
 
 	constructor(
 		private _courseService : CourseService,
@@ -25,15 +27,22 @@ export class CourseDetailComponent implements OnInit, OnDestroy {
 		// let id : number = parseInt(this._activatedRouteService.snapshot.params['id']);
 		// this.course = this._courseService.getCourseByID(id);
 
-		this.subscription = this._activatedRouteService.params.subscribe((params : Params) => {
+		this.subscriptionParams = this._activatedRouteService.params.subscribe((params : Params) => {
 			let id : number = parseInt(params['id']);
 			this.course = this._courseService.getCourseByID(id);
 		});
 
+		this.subscriptionQueryParams = this._activatedRouteService.queryParams.subscribe(
+			(params : Params) => {
+				this.page = params['page'];
+			}
+		);
+
 	}
 
 	ngOnDestroy(){
-		this.subscription.unsubscribe();
+		this.subscriptionParams.unsubscribe();
+		this.subscriptionQueryParams.unsubscribe();
 	}
 
 	backToCourseList(){
