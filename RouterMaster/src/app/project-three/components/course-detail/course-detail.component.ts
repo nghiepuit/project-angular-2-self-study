@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
 
 import { ICourse } from './../../defines/course.interface';
 import { CourseService } from './../../services/course.service';
@@ -9,9 +10,10 @@ import { CourseService } from './../../services/course.service';
 	templateUrl: './course-detail.component.html',
 	styleUrls: ['./course-detail.component.css']
 })
-export class CourseDetailComponent implements OnInit {
+export class CourseDetailComponent implements OnInit, OnDestroy {
 
 	course : ICourse;
+	subscription : Subscription;
 
 	constructor(
 		private _courseService : CourseService,
@@ -23,11 +25,15 @@ export class CourseDetailComponent implements OnInit {
 		// let id : number = parseInt(this._activatedRouteService.snapshot.params['id']);
 		// this.course = this._courseService.getCourseByID(id);
 
-		this._activatedRouteService.params.subscribe((params : Params) => {
+		this.subscription = this._activatedRouteService.params.subscribe((params : Params) => {
 			let id : number = parseInt(params['id']);
 			this.course = this._courseService.getCourseByID(id);
 		});
 
+	}
+
+	ngOnDestroy(){
+		this.subscription.unsubscribe();
 	}
 
 	backToCourseList(){

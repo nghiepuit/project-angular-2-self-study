@@ -11,7 +11,7 @@ export class CourseDetailGuardService implements CanActivate {
 	) { }	
 
 	canActivate(route : ActivatedRouteSnapshot) : boolean{
-		let id : string = route.url[1].path;
+		let id : number = parseInt(route.url[1].path);
 		if(this._courseService.getCourses().indexOf(this._courseService.getCourseByID(id)) < 0){
 			this._routerService.navigate(['courses']);
 			return false;
