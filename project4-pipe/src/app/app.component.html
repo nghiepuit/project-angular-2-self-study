@@ -1,0 +1,51 @@
+<table class="table table-hover" border="1">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Input</th>
+            <th>Output</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Custom</td>
+            <td>{{ title }}</td>
+            <td>{{ title | capitalize }}</td>
+        </tr>
+        <tr>
+            <td>Sort Array</td>
+            <td>
+                <span *ngFor="let a of arrNumber">
+                	{{ a }}
+                </span>
+            </td>
+            <td>
+                <span *ngFor="let b of arrNumber | sort : 'DESC' ">
+                	{{ b }}
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Summary</td>
+            <td>
+                {{ des }}
+            </td>
+            <td>
+                {{ des | summary : 20 : ' v.v...' }}
+            </td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <ul>
+                	<li *ngFor="let cat of categories">
+                		{{ cat }}
+                	</li>
+                </ul>
+            </td>
+            <td>
+                {{ categories | category}}
+            </td>
+        </tr>
+    </tbody>
+</table>

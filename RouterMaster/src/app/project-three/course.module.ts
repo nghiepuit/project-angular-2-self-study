@@ -21,7 +21,7 @@ import { SharedModule } from './../shared/shared.module';
     CourseRoutingModule,
     SharedModule
   ],
-  providers: [CourseService,CourseDetailGuardService],
+  providers: [CourseService, CourseDetailGuardService],
   bootstrap: []
 })
 export class CourseModule { }
